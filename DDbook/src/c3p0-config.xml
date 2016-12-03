@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+	<default-config>
+		<!-- 你的数据库驱动 -->
+		<property name="driverClass">com.mysql.jdbc.Driver</property>
+		<!-- 你的数据库 -->
+		<property name="jdbcUrl">jdbc:mysql://localhost:3306/ddbook?useSSL=FALSE</property>
+		<!-- 数据库账户 -->
+		<property name="user">root</property>
+		<!-- 数据库密码 -->
+		<property name="password">1024</property>
+		<!-- 配置当连接池所有连接用完时应用程序getConnection的等待时间。 为0时则无限等待，直到有其他连接释放，不为0的时候，如果仍然没有获得连接， 
+			则抛出SQLException。 -->
+		<property name="checkoutTimeout">30000</property>
+		<!--用来配置测试空闲连接的时间，可以用来解决MySql8小时断开连接的问题。 因为它保证连接池会每隔一段时间对空闲连接进行一次测试，从而保证有效的空闲 
+			连接能每隔一段时间访问一次数据库，将于MySql8小时无会话状态打破。 值为0则不测试。 -->
+		<property name="idleConnectionTestPeriod">30</property>
+		<!-- 连接池初始化时创建的连接数 -->
+		<property name="initialPoolSize">10</property>
+		<!-- 连接的最大空闲时间，如果超过这个时间，某个数据库连接还没有被使用， 则会断开掉这个连接。如果为0，则不会断开连接。 -->
+		<property name="maxIdleTime">30</property>
+		<!-- 连接池中拥有的最大连接数，如果获得新连接时会时连接总数超过这个值 则不会再获取连接，而是等待 -->
+		<property name="maxPoolSize">100</property>
+		<!-- 连接池保持的最小连接数。 -->
+		<property name="minPoolSize">10</property>
+		<!-- 连接池为数据源缓存的PreparedStatement的总数。 由于PreparedStatement属于单个Connection，所以这个数量应该根据应用 
+			中平均连接数乘以每个连接的平均PreparedStatement来计算。 -->
+		<property name="maxStatements">200</property>
+	</default-config>
+</c3p0-config>
