@@ -105,12 +105,12 @@ public class ManagerServlet extends HttpServlet {
 		//这个类主要是设置邮件  
 	      MailSenderInfo mailInfo = new MailSenderInfo();   
 	      List<Customer> list = cbiz.getAll();
-	      mailInfo.setMailServerHost("smtp.126.com");   
-	      mailInfo.setMailServerPort("25");   
+	      mailInfo.setMailServerHost("smtp.126.com");  // 服务器 
+	      mailInfo.setMailServerPort("25");   // 端口
 	      mailInfo.setValidate(true);   
-	      mailInfo.setUserName("vantor");   
-	      mailInfo.setPassword("varn1024");//您的邮箱的客户端授权码
-	      mailInfo.setFromAddress("vantor@126.com");   
+	      mailInfo.setUserName("username");   
+	      mailInfo.setPassword("*******");//您的邮箱的客户端授权码
+	      mailInfo.setFromAddress("user@email.com");   
 	      String text = request.getParameter("text");
 	      System.out.println("%%%%%%%%%%%%%%%%%%");
 	      System.out.println(text);
